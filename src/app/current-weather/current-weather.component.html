@@ -1,73 +1,79 @@
 <div class="weather-header">
+  <div class="weather-header-all">
+    <!--row-->
 
-  <div class="weather-header-all"><!--row-->
-
-    <div class="weather-header-date"><!--colun-->
-      <div class="weather-header-date-today"><!--row-->
+    <div class="weather-header-date">
+      <!--colun-->
+      <div class="weather-header-date-today">
+        <!--row-->
         <div class="weather-header-date-today-main">
           <div class="weather-header-city">
             <h1>
               {{ weather.name }}
             </h1>
           </div>
-          <h2>
-            Dzisiaj:  {{ date | date: "yyyy-MM-dd" }}
-           </h2>
+          <h2>Dzisiaj: {{ date | date: "yyyy-MM-dd" }}</h2>
           <div class="weather-header-date-today-rise">
-            <i class="wi icon-rise wi-sunrise"> </i> {{weather.sys.sunrise*1000|date:'HH:mm '}}-{{weather.sys.sunset*1000|date:'HH:mm '}}
+            <i class="wi icon-rise wi-sunrise"> </i>
+            {{ weather.sys.sunrise * 1000 | date: "HH:mm " }}-{{
+              weather.sys.sunset * 1000 | date: "HH:mm "
+            }}
           </div>
         </div>
-
       </div>
       <div class="weather-header-date-todaycloud">
-        <i class="wi icon-rise wi-sunrise"> </i>
-        <h1>{{temp| number : '1.0-0'}}&#8451;</h1>
+        <i class="{{ map.get(icon) }}"> </i>
+        <h1>{{ temp | number: "1.0-0" }}&#8451;</h1>
       </div>
       <div class="weather-header-date-other">
-        <i class="wi wi-barometer "> </i>
+        <i class="wi wi-barometer"> </i>
         <h1>
-          {{weather.main.pressure}}
+          {{ weather.main.pressure }}
         </h1>
-        <i class="wi wi-humidity "> </i>
-        <h1>{{weather.main.humidity}}</h1>
-        <i class="risewind wi wi-wind towards-23-deg "> </i>
-        <h1>{{weather.wind.speed}}</h1>
+        <i class="wi wi-humidity"> </i>
+        <h1>{{ weather.main.humidity }}</h1>
+        <i class="risewind wi wi-wind towards-23-deg"> </i>
+        <h1>4km/h</h1>
       </div>
     </div>
     <div class="line"></div>
     <div class="today">
-      <div class="searchcity"><!--row-->
-       <h1>
-        SPRAWDŹ POGODĘ
-       </h1>
+      <div class="searchcity">
+        <!--row-->
+        <h1>SPRAWDŹ POGODĘ</h1>
       </div>
       <div class="send">
-        <input type="text" class="addCom" placeholder="Wpisz nazwe miasta" [(ngModel)]="searchTerm" />
-        <button button type="submit" class="searchbtn" (click)="sendNameOfCity()">
+        <input
+          type="text"
+          class="addCom"
+          placeholder="Wpisz nazwe miasta"
+          [(ngModel)]="searchTerm"
+        />
+        <button
+          button
+          type="submit"
+          class="searchbtn"
+          (click)="sendNameOfCity()"
+        >
           Wyślij
-          </button>
+        </button>
       </div>
     </div>
 
-
     <ul class="othercity">
-        <li *ngFor="let item of listWithCityNames">
-          {{item}}
-        </li>
-
+      <li *ngFor="let item of listWithCityNames">
+        {{ item }}
+      </li>
     </ul>
-
-
- </div>
-
+  </div>
 </div>
 
 <agm-map
   [latitude]="lat"
   [longitude]="lon"
-  (mapClick)="onChoseLocation($event)"
+  (mapClick)="onChoseLocation($event.coords.lat, $event.coords.lng)"
 >
   <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
 </agm-map>
 
-
+<app-daily-weather [lat]="lat" [lon]="lon" [map]="map"> </app-daily-weather>

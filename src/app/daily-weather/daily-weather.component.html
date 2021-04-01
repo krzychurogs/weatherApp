@@ -1,0 +1,84 @@
+<div class="container-daily">
+  <div class="container-daily-nav">
+    Poniedziałek, 29.03.2021
+  </div>
+  <div class="container-daily-list">
+    <div class="container-daily-row" *ngFor="let item of listDailyAR| paginate: { id: 'listing_pagination',
+    itemsPerPage: 6,
+    currentPage: page
+  };index as i" >   <!--row-->
+
+
+      <div class="container-daily-left">
+        <div class="container-daily-hour">
+          {{item.hourly[i].dt * 1000|date: 'HH:00'}}
+        </div>
+        <div class="container-daily-cloud">
+          <i class=" icon-rise {{ map.get(item.hourly[i].weather[0].icon) }}"> </i>
+          <h1>
+            {{ item.hourly[i].temp - 273.15| number: "1.0-0" }}&#8451;
+          </h1>
+        </div>
+
+     </div>
+     <div class="container-daily-stats">
+      <div class="container-daily-stats-temperature">
+          <div class="container-daily-stats-temperature-detail">
+            <span class="spanProp">Odczuwalna</span>
+            <span> {{item.hourly[i].feels_like - 273.15 | number: "1.0-0"}}&#8451;</span>
+           </div>
+           <div class="container-daily-stats-temperature-detail">
+            <span  class="spanProp">Ciśnienie</span>
+            <span> {{item.hourly[i].pressure }} hpa</span>
+           </div>
+
+           <div class="container-daily-stats-temperature-detail">
+            <span  class="spanProp">Wilgotność</span>
+            <span> {{item.hourly[i].humidity | number: "1.0-0"}}%</span>
+           </div>
+
+      </div>
+      <div class="container-daily-stats-temperature">
+        <div class="container-daily-stats-temperature-detail">
+
+          <span  class="spanProp">Wiatr</span>
+          <span> {{item.hourly[i].wind_speed *3.6 | number: "1.0-0"}}km/h</span>
+         </div>
+         <div class="container-daily-stats-temperature-detail">
+          <span  class="spanProp">Porywy wiatru</span>
+          <span> {{item.hourly[i].wind_gust *3.6 | number: "1.0-0" }} km/h</span>
+         </div>
+
+         <div class="container-daily-stats-temperature-detail">
+          <span   class="spanProp">Chmury</span>
+          <span> {{item.hourly[i].clouds}}%</span>
+         </div>
+
+      </div>
+      <div class="container-daily-stats-temperature">
+        <div class="container-daily-stats-temperature-detail">
+          <span  class="spanProp">Widoczność</span>
+          <span> {{item.hourly[i].visibility /100 | number: "1.0-0"}}%</span>
+         </div>
+         <div class="container-daily-stats-temperature-detail">
+          <span  class="spanProp">Chmury</span>
+
+          <span> {{ mapDescryption.get(item.hourly[i].weather[0].description ) }}</span>
+         </div>
+
+         <div class="container-daily-stats-temperature-detail">
+          <span  class="spanProp">Wiatr</span>
+          <span> {{item.hourly[i].feels_like - 273.15 | number: "1.0-0"}}&#8451;</span>
+         </div>
+
+      </div>
+    </div>
+    </div>
+    <pagination-controls  id="listing_pagination" previousLabel="Wczesniej" nextLabel="Później" (pageChange)="page = $event" directionsLinks=directionsLinks></pagination-controls>
+  </div>
+  <div>
+
+  </div>
+</div>
+
+

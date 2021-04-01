@@ -1,5 +1,6 @@
 export interface Weather {
+  id: any;
   main?: string;
-  descryption?: string;
+  description: string;
   icon: string;
 }

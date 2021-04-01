@@ -12,7 +12,10 @@ import { CurrentWeatherServiceService } from './current-weather-service.service'
 export class CurrentWeatherComponent implements OnInit {
   searchTerm: string = '';
   date = new Date();
+  test = new Date();
+
   temp: any;
+  icon: any;
   listWithCityNames = [
     'Lublin',
     'Kraków',
@@ -24,6 +27,8 @@ export class CurrentWeatherComponent implements OnInit {
   sunriseDate = new Date();
   sunsetDate = new Date();
   weather: CurrentWeather = { main: {}, sys: {} } as CurrentWeather;
+  map = new Map<string, string>();
+  mapWind = new Map<string, string>();
 
   constructor(private service: CurrentWeatherServiceService) {
     this.service
@@ -33,12 +38,14 @@ export class CurrentWeatherComponent implements OnInit {
         this.displayCityOnMap(data.coord.lat, data.coord.lon);
       });
   }
-  lat = 51.678418;
-  lon = 7.809007;
+  public lat = 50.0413;
+  public lon = 21.999;
   ngOnInit() {}
 
-  onChoseLocation(event: any) {
-    console.log(event);
+  onChoseLocation(lat: number, lng: number) {
+    console.log(lat);
+    this.lat = lat;
+    this.lon = lng;
   }
 
   sendNameOfCity() {
@@ -53,13 +60,30 @@ export class CurrentWeatherComponent implements OnInit {
   displayInformation(data: CurrentWeather) {
     this.weather = data;
     console.log(data);
-    console.log(data.sys.sunrise);
-    console.log(data.sys.sunset);
+    this.icon = data.weather[0].icon;
+    console.log('ic', data.weather[0].icon);
     this.temp = data.main.temp - 273.15;
     console.log('temp' + this.temp);
+    this.test.setTime(1616724000 * 1000);
+    console.log(this.test);
     this.sunriseDate.setTime(data.sys.sunrise * 1000);
     this.sunsetDate.setTime(data.sys.sunset * 1000);
     this.date.setTime(data.dt * 1000); // javascript timestamps are in milliseconds
+    this.map.set('01d', 'wi wi-day-sunny');
+    this.map.set('01n', 'wi wi-day-sunny');
+    this.map.set('02d', 'wi wi-day-cloudy');
+    this.map.set('02n', 'wi wi-day-cloudy');
+    this.map.set('03d', 'wi wi-day-cloudy-high');
+    this.map.set('03n', 'wi wi-day-cloudy-high');
+    this.map.set('04d', 'wi wi-cloudy');
+    this.map.set('04n', 'wi wi-cloudy');
+    this.map.set('09d', 'wi wi-day-showers');
+    this.map.set('09n', 'wi wi-day-showers');
+    this.map.set('10d', 'wi wi-day-rain');
+    this.map.set('10n', 'wi wi-day-rain');
+    this.map.set('11d', 'wi wi-day-cloudy');
+    this.map.set('11n', 'wi wi-day-cloudy');
+    this.mapWind.set('20', 'from-90-deg');
   }
   displayCityOnMap(lat: any, lon: any) {
     this.lat = lat;
