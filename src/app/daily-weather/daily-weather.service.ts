@@ -16,7 +16,7 @@ export class DailyWeatherService {
         lat +
         '&lon=' +
         lon +
-        '&exclude=daily&appid=d050b62558752c20cab078834b745228'
+        '&exclude=daily&appid=d050b62558752c20cab078834b745228&lang=pl'
     );
   }
 }

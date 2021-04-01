@@ -63,7 +63,7 @@
          <div class="container-daily-stats-temperature-detail">
           <span  class="spanProp">Chmury</span>
 
-          <span> {{ mapDescryption.get(item.hourly[i].weather[0].description ) }}</span>
+          <span>{{ item.hourly[i].weather[0].description | titlecase }}</span>
          </div>
 
          <div class="container-daily-stats-temperature-detail">
