@@ -13,7 +13,7 @@ export class CurrentWeatherServiceService {
       this.baseurl +
         'weather?q=' +
         postdata +
-        '&appid=d050b62558752c20cab078834b745228'
+        '&appid=d050b62558752c20cab078834b745228&lang=pl'
     );
   }
 }
