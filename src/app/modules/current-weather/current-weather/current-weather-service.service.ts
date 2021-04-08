@@ -16,4 +16,14 @@ export class CurrentWeatherServiceService {
         '&appid=d050b62558752c20cab078834b745228&lang=pl'
     );
   }
+  getCurrentWeatherFromCord(lat: any, lot: any): Observable<any> {
+    return this.http.get(
+      this.baseurl +
+        'weather?lat=' +
+        lat +
+        '&lon=' +
+        lot +
+        '&appid=d050b62558752c20cab078834b745228&lang=pl'
+    );
+  }
 }

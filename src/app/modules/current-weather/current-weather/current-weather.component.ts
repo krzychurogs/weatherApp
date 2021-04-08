@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CurrentWeather } from '../core/models/current_weather';
+import { CurrentWeather } from 'src/app/core/models/current_weather';
 
 import { CurrentWeatherServiceService } from './current-weather-service.service';
 
@@ -46,10 +46,17 @@ export class CurrentWeatherComponent implements OnInit {
     console.log(lat);
     this.lat = lat;
     this.lon = lng;
+    this.service
+      .getCurrentWeatherFromCord(this.lat, this.lon)
+      .subscribe((data: CurrentWeather) => {
+        console.log('cor' + data);
+        this.displayInformation(data);
+        this.displayCityOnMap(data.coord.lat, data.coord.lon);
+      });
   }
 
   sendNameOfCity() {
-    console.log(this.searchTerm);
+    // console.log(this.searchTerm);
     this.service
       .getCurrentWeatherFromName(this.searchTerm)
       .subscribe((data: CurrentWeather) => {
@@ -59,7 +66,7 @@ export class CurrentWeatherComponent implements OnInit {
   }
   displayInformation(data: CurrentWeather) {
     this.weather = data;
-    console.log(data);
+    // console.log(data);
     this.icon = data.weather[0].icon;
     console.log('ic', data.weather[0].icon);
     this.temp = data.main.temp - 273.15;

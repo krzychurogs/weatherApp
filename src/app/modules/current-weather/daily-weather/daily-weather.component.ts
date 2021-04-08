@@ -1,5 +1,5 @@
-import { DailyWeather } from './../core/models/daily_weather';
 import { Component, Input, OnInit } from '@angular/core';
+import { DailyWeather } from 'src/app/core/models/daily_weather';
 
 import { DailyWeatherService } from './daily-weather.service';
 
@@ -19,6 +19,7 @@ export class DailyWeatherComponent implements OnInit {
   map?: any;
   page: any = 1;
   directionsLinks: boolean = true;
+  mapDescryption = new Map<string, string>();
 
   constructor(public service: DailyWeatherService) {}
   ngOnChanges() {
@@ -34,6 +35,15 @@ export class DailyWeatherComponent implements OnInit {
         }
         console.log(this.listDailyAR[0].hourly[0].dt);
       });
+    this.mapDescryption.set('clear sky', 'Czyste niebo');
+    this.mapDescryption.set('few clouds', 'Lekko zachmurzone');
+    this.mapDescryption.set('scattered clouds', 'Mocno zachmurzone');
+    this.mapDescryption.set('broken clouds', 'Mocno zachmurzone');
+    this.mapDescryption.set('light rain', 'Lekki Deszcz');
+    this.mapDescryption.set('heavy intensity shower rain', 'Mocny Deszcz');
+    this.mapDescryption.set('thunderstorm', 'Burza');
+    this.mapDescryption.set('snow', 'Śnieg');
   }
+
   ngOnInit(): void {}
 }

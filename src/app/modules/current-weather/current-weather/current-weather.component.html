@@ -38,6 +38,7 @@
     </div>
     <div class="line"></div>
     <div class="today">
+    <div class="today-left">
       <div class="searchcity">
         <!--row-->
         <h1>SPRAWDŹ POGODĘ</h1>
@@ -53,18 +54,20 @@
           button
           type="submit"
           class="searchbtn"
-          (click)="sendNameOfCity()"
-        >
+          (click)="sendNameOfCity()">
           Wyślij
         </button>
       </div>
-    </div>
 
-    <ul class="othercity">
-      <li *ngFor="let item of listWithCityNames">
-        {{ item }}
-      </li>
-    </ul>
+    </div>
+    <div  class="today-right">
+      <ul class="othercity">
+        <li *ngFor="let item of listWithCityNames">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+    </div>
   </div>
 </div>
 
@@ -75,5 +78,5 @@
 >
   <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
 </agm-map>
-
 <app-daily-weather [lat]="lat" [lon]="lon" [map]="map"> </app-daily-weather>
+

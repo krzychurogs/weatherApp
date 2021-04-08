@@ -25,16 +25,16 @@
       <div class="container-daily-stats-temperature">
           <div class="container-daily-stats-temperature-detail">
             <span class="spanProp">Odczuwalna</span>
-            <span> {{item.hourly[i].feels_like - 273.15 | number: "1.0-0"}}&#8451;</span>
+            <span class="spanValue">  {{item.hourly[i].feels_like - 273.15 | number: "1.0-0"}}&#8451;</span>
            </div>
            <div class="container-daily-stats-temperature-detail">
             <span  class="spanProp">Ciśnienie</span>
-            <span> {{item.hourly[i].pressure }} hpa</span>
+            <span class="spanValue"> {{item.hourly[i].pressure }} hpa</span>
            </div>
 
            <div class="container-daily-stats-temperature-detail">
             <span  class="spanProp">Wilgotność</span>
-            <span> {{item.hourly[i].humidity | number: "1.0-0"}}%</span>
+            <span class="spanValue"> {{item.hourly[i].humidity | number: "1.0-0"}}%</span>
            </div>
 
       </div>
@@ -42,33 +42,33 @@
         <div class="container-daily-stats-temperature-detail">
 
           <span  class="spanProp">Wiatr</span>
-          <span> {{item.hourly[i].wind_speed *3.6 | number: "1.0-0"}}km/h</span>
+          <span class="spanValue"> {{item.hourly[i].wind_speed *3.6 | number: "1.0-0"}}km/h</span>
          </div>
          <div class="container-daily-stats-temperature-detail">
           <span  class="spanProp">Porywy wiatru</span>
-          <span> {{item.hourly[i].wind_gust *3.6 | number: "1.0-0" }} km/h</span>
+          <span class="spanValue"> {{item.hourly[i].wind_gust *3.6 | number: "1.0-0" }} km/h</span>
          </div>
 
          <div class="container-daily-stats-temperature-detail">
           <span   class="spanProp">Chmury</span>
-          <span> {{item.hourly[i].clouds}}%</span>
+          <span class="spanValue"> {{item.hourly[i].clouds}}%</span>
          </div>
 
       </div>
       <div class="container-daily-stats-temperature">
         <div class="container-daily-stats-temperature-detail">
           <span  class="spanProp">Widoczność</span>
-          <span> {{item.hourly[i].visibility /100 | number: "1.0-0"}}%</span>
+          <span class="spanValue"> {{item.hourly[i].visibility /100 | number: "1.0-0"}}%</span>
          </div>
          <div class="container-daily-stats-temperature-detail">
           <span  class="spanProp">Chmury</span>
 
-          <span>{{ item.hourly[i].weather[0].description | titlecase }}</span>
+          <span class="spanValue"> {{item.hourly[i].weather[0].description  }}</span>
          </div>
 
          <div class="container-daily-stats-temperature-detail">
           <span  class="spanProp">Wiatr</span>
-          <span> {{item.hourly[i].feels_like - 273.15 | number: "1.0-0"}}&#8451;</span>
+          <span class="spanValue"> {{item.hourly[i].feels_like - 273.15 | number: "1.0-0"}}&#8451;</span>
          </div>
 
       </div>

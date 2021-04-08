@@ -1,11 +1,14 @@
-import { DailyWeatherComponent } from './daily-weather/daily-weather.component';
-import { CurrentWeatherComponent } from './current-weather/current-weather.component';
+import { MainModule } from './modules/main.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CurrentWeatherComponent } from './modules/current-weather/current-weather/current-weather.component';
 
 const routes: Routes = [
-  { path: 'current-weather', component: CurrentWeatherComponent },
-  { path: 'daily-weather', component: DailyWeatherComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/main.module').then((m) => m.MainModule),
+  },
 ];
 
 @NgModule({
