@@ -97,4 +97,13 @@ export class CurrentWeatherComponent implements OnInit {
     this.lon = lon;
     console.log(lat);
   }
+  itemclick(item: any) {
+    console.log(item);
+    this.service
+      .getCurrentWeatherFromName(item)
+      .subscribe((data: CurrentWeather) => {
+        this.displayInformation(data);
+        this.displayCityOnMap(data.coord.lat, data.coord.lon);
+      });
+  }
 }

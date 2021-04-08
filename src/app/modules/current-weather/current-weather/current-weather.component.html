@@ -62,7 +62,7 @@
     </div>
     <div  class="today-right">
       <ul class="othercity">
-        <li *ngFor="let item of listWithCityNames">
+        <li *ngFor="let item of listWithCityNames" (click)="itemclick(item)">
           {{ item }}
         </li>
       </ul>
