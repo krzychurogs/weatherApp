@@ -14,6 +14,7 @@ Map
     <li>Viewing data about weather after marker place on map </li>
   </ul>
 </li>
+  <li>
  Current Weather
   <ul>
     <li>Viewing main stats about weather at the moment</li>
@@ -21,6 +22,7 @@ Map
     <li>The precise date of sunrise and sunset for searched city.</li>
   </ul>
 </li>
+  <li>
 Daily Weather hour after hour
   <ul>
     <li>Display detail of weather hour after hour</li>
@@ -28,8 +30,5 @@ Daily Weather hour after hour
     <li>Paginate for hours.</li>
   </ul>
 </li>
-
-
-
 
 </ul>  
