@@ -1,27 +1,35 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+## Description
+ds
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Functionalities
+<ul>
+<li>
+Map
+  <ul>
+    <li>Marking place on map</li>
+    <li>Marking place on map after type name of city</li>
+    <li>Viewing data about weather after marker place on map </li>
+  </ul>
+</li>
+ Current Weather
+  <ul>
+    <li>Viewing main stats about weather at the moment</li>
+    <li>Display icon of weather depending on the weather</li>
+    <li>The precise date of sunrise and sunset for searched city.</li>
+  </ul>
+</li>
+Daily Weather hour after hour
+  <ul>
+    <li>Display detail of weather hour after hour</li>
+    <li>Display icon of predicted weather</li>
+    <li>Paginate for hours.</li>
+  </ul>
+</li>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+</ul>  
