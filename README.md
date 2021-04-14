@@ -38,4 +38,4 @@ Few photos from app
 1. Aktualna pogoda
 ![](ReadmeImg/current.JPG)
 2. Godzinowa Pogoda szczegołowa
-![](ReadmeImg/dialy.JPG.JPG)
+![](ReadmeImg/dialy.JPG)
