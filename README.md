@@ -3,6 +3,16 @@
 ## Description
 Application allows user to check weather in diffrent places on the world. Its full reposonsive app which use OpenWeather API. Every place on the map you can mark, and app show data about weather for this coordinates. Also app allows to check daily-weather hour after hour with detail data about weather(power of wind,direction etc..)
 
+## Technology stack
+
+<ul>
+  <li>Angular 11</li>
+  <li>Angular material</li>
+  <li>RxJs</li>
+  <li>SCSS</li>
+  <li>AgmMap</li>
+  
+</ul>  
 
 ## Functionalities
 <ul>
@@ -32,16 +42,7 @@ Daily Weather hour after hour
 </li>
 
 </ul>  
-## Technology stack
 
-<ul>
-  <li>Angular 11</li>
-  <li>Angular material</li>
-  <li>RxJs</li>
-  <li>SCSS</li>
-  <li>AgmMap</li>
-  
-</ul>  
 
 ## App
 Few photos from app 
