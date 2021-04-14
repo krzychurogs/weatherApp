@@ -34,6 +34,6 @@ Daily Weather hour after hour
 </ul>  
 
 ## App
-![](ReadmeImg/current.png)
+![](ReadmeImg/current.jpg)
 
-![](readmeImg/offers.png)
+![](readmeImg/daily.jpg)
