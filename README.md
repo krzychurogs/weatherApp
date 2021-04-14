@@ -34,6 +34,8 @@ Daily Weather hour after hour
 </ul>  
 
 ## App
+Few photos from app 
+1. Aktualna pogoda
 ![](ReadmeImg/current.JPG)
-
-![](ReadmeImg/daily.JPG)
+2. Godzinowa Pogoda szczegołowa
+![](ReadmeImg/dialy.JPG.JPG)
