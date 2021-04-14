@@ -1,7 +1,7 @@
 # WeatherApp
 
 ## Description
-Application allows user to check weather in different places in the world. It's full reposonsive app,which use OpenWeather API. You can mark everyplace on the map, then it shows data about weather for this coordinates. Also app allows to check daily-weather hour after hour with detail data about weather(power of wind,direction etc..)
+Application allows user to check weather in different places in the world. It's full reposonsive app,which use OpenWeather API. You can mark everyplace on the map, then it shows data about weather for this coordinates. Also app allows to check daily-weather hour after hour with detail data about weather (power of wind,visibility etc..)
 
 ## Technology stack
 
